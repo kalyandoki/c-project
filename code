@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+namespace BookMySeatApp
+{
+    public class Seat
+    {
+        public string SeatNumber { get; set; }
+        public bool IsBooked { get; set; }
+        public string SeatType { get; set; }
+    }
+
+    public class Booking
+    {
+        public List<Seat> SelectedSeats { get; set; }
+        public int NumberOfSeats { get; set; }
+        public string TicketType { get; set; }
+    }
+
+    public class MovieHall
+    {
+        public List<Seat> Seats { get; set; }
+
+        public void InitializeSeats()
+        {
+            // Initialize the list of seats in the hall with types (Standard or Premium)
+            // You can set availability based on your logic.
+        }
+
+        public bool IsSeatAvailable(string seatNumber)
+        {
+            // Check if the seat is available for booking.
+        }
+    }
+
+    public class BookMySeatAppForm : Form
+    {
+        private MovieHall movieHall;
+        private Booking currentBooking;
+
+        // Initialize the form with seat layout, buttons, labels, etc.
+        // Initialize the form with seat layout, buttons, labels, etc.
+        public BookMySeatAppForm()
+        {
+            movieHall = new MovieHall();
+            currentBooking = new Booking();
+
+            // Initialize the UI components here (seating layout, buttons, labels, etc.).
+
+            // Add event handlers for seat selection and "Proceed" button.
+        }
+
+        // Event handler for seat selection
+        private void SeatSelected(object sender, EventArgs e)
+        {
+            // Handle seat selection logic. Update the UI to indicate selected seats.
+        }
+
+        // Event handler for "Proceed" button
+        private void ProceedButtonClicked(object sender, EventArgs e)
+        {
+            // Handle the booking process, mark seats as booked, and update UI accordingly.
+        }
+    }
+
+    public static class Program
+    {
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            // Create and run the main form of the application
+            Application.Run(new BookMySeatAppForm());
+        }
+    }
+}
